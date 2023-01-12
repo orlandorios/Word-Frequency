@@ -78,7 +78,9 @@ def format_word_count(word_count):
     for word, count, in word_count.items():
         # key always comes first before the value
         # destruture tuple to access the key and value 
-        formatted_list += ('\n' + word + ' | ' + str(count) + ' ' + ('*' * count))
+        formatted_list += ('\n' + word.rjust(15) + ' | ' + str(count) + ' ' + ('*' * count))
+        #.rjust (or rjustified) with number amount in parantheses adds padding to left of text and pushes font to right
+        #you can also do .ljust(number) to add padding to the right and push text to the left
         #concatenate into list, with the key, then turn the integer value into a string
     return formatted_list
 #     # if function doesn't have a value to return, it will return none
@@ -99,9 +101,6 @@ if __name__ == "__main__":
     else:
         print(f"{file_path} does not exist!")
         exit(1)
-        
-
-
 
 # word_count_map = {
 #     #taking a word and mapping to a number (number of occurences in the original string)
